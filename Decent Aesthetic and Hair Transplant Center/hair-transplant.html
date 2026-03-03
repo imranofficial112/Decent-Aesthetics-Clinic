@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Transplant | Premium Aesthetic & Hair Clinic</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Page Header */
+        .page-header {
+            padding: 8rem 5% 4rem;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--gold);
+            font-size: 3rem;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        /* Content Layout */
+        .content-section {
+            padding: 5rem 5%;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .method-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--gold);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--gold);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+
+        /* FAQs */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--navy);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--gold);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: var(--grey-bg);
+            padding: 0 1.5rem;
+        }
+
+        .faq-answer p {
+            margin: 1.5rem 0;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (reused) -->
+    <header id="navbar" class="scrolled">
+        <a href="index.html" class="logo" style="color:var(--navy);">DECENT<span>AESTHETICS</span></a>
+        <nav class="nav-links">
+            <a href="index.html" style="color:var(--navy);">Home</a>
+            <a href="hair-transplant.html" style="color:var(--gold);">Hair Transplant</a>
+            <a href="aesthetics.html" style="color:var(--navy);">Aesthetics</a>
+            <a href="shop.html" style="color:var(--navy);">Shop</a>
+            <a href="gallery.html" style="color:var(--navy);">Gallery</a>
+            <a href="blog.html" style="color:var(--navy);">Blog</a>
+            <a href="contact.html" style="color:var(--navy);">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn btn-outline" style="color:var(--navy); border-color:var(--navy);">Book
+            Consultation</a>
+    </header>
+
+    <div class="page-header">
+        <h1>Advanced Hair Transplant</h1>
+        <p>Permanent, Natural results using the world's most advanced techniques.</p>
+    </div>
+
+    <section class="content-section">
+        <div class="content-grid">
+            <div class="fade-in">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">What is a Hair Transplant?</h2>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">A hair transplant is a permanent surgical
+                    solution for hair loss. It involves extracting healthy hair follicles from a donor area (usually the
+                    back of the head) and implanting them into areas experiencing thinning or baldness.</p>
+                <p style="color: var(--text-light);">At Decent Aesthetics Clinic, we utilize the latest microscopic
+                    technology to
+                    ensure 100% natural-looking hairlines with maximum density and zero visible scarring.</p>
+            </div>
+            <div class="fade-in">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800"
+                    alt="Hair Transplant FUE Surgery"
+                    style="width:100%; border-radius:15px; box-shadow:0 20px 40px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section bg-light" style="background:var(--white);">
+        <div class="container" style="max-width:1200px; margin:0 auto;">
+            <h2 class="section-title fade-in">Our Methods</h2>
+            <div class="content-grid" style="align-items:start; margin-top:3rem;">
+                <div class="method-card fade-in">
+                    <h3>FUE Method</h3>
+                    <p style="color:var(--text-light); margin-bottom: 1rem;">Follicular Unit Extraction is the gold
+                        standard in hair restoration. Individual follicles are extracted one by one.</p>
+                    <ul style="color:var(--text-light); line-height:2;">
+                        <li><i class="fa-solid fa-check" style="color:var(--gold);"></i> No linear scarring</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--gold);"></i> Faster recovery time</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--gold);"></i> Natural distribution</li>
+                    </ul>
+                </div>
+                <div class="method-card fade-in">
+                    <h3>FUT Method</h3>
+                    <p style="color:var(--text-light); margin-bottom: 1rem;">Follicular Unit Transplantation allows for
+                        the highest yield of grafts in a single session.</p>
+                    <ul style="color:var(--text-light); line-height:2;">
+                        <li><i class="fa-solid fa-check" style="color:var(--gold);"></i> Maximum graft count</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--gold);"></i> Ideal for advanced hair loss
+                        </li>
+                        <li><i class="fa-solid fa-check" style="color:var(--gold);"></i> High survival rate of follicles
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title fade-in">Procedure Timeline</h2>
+        <p class="section-subtitle fade-in">What to expect on the day of your treatment</p>
+        <div class="timeline fade-in">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3 style="color:var(--gold);">Step 1: Consultation & Design</h3>
+                    <p>Our experts design your new hairline based on your facial structure and goals.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3 style="color:var(--gold);">Step 2: Local Anesthesia</h3>
+                    <p>Painless numbing of the donor and recipient areas for your comfort.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h3 style="color:var(--gold);">Step 3: Extraction</h3>
+                    <p>Careful harvesting of healthy hair follicles from the donor area.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h3 style="color:var(--gold);">Step 4: Implantation</h3>
+                    <p>Precise placement of follicles to match natural growth direction and density.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background:var(--white);">
+        <div class="container" style="max-width:800px; margin:0 auto;">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            <div class="faq-container fade-in" style="margin-top:3rem;">
+                <div class="faq-item">
+                    <div class="faq-question">Is the procedure painful? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-answer">
+                        <p>No, the procedure is performed under local anesthesia. You may feel a slight prick initially,
+                            but the actual surgery is completely painless. Patients often watch TV or sleep during the
+                            treatment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">When will I see results? <i class="fa-solid fa-plus"></i></div>
+                    <div class="faq-answer">
+                        <p>New hair growth typically begins after 3 to 4 months. By 6 months, you'll see significant
+                            improvement, and final results are visible 12 to 15 months post-procedure.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer Beard & Eyebrow Transplants? <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in facial hair restoration using the same advanced micro-FUE technique for
+                            completely natural-looking beards, mustaches, and eyebrows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section text-center padding-section parallax fade-in"
+        style="background-color: var(--navy); background-image: repeating-linear-gradient(45deg, rgba(255, 193, 7, 0.05) 0px, rgba(255, 193, 7, 0.05) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(-45deg, rgba(255, 193, 7, 0.05) 0px, rgba(255, 193, 7, 0.05) 1px, transparent 1px, transparent 30px); background-attachment: fixed;">
+        <div class="cta-overlay" style="background: rgba(11, 60, 93, 0.9);"></div>
+        <div class="cta-content">
+            <h2>Ready for a Transformation?</h2>
+            <p>Book Your Free Hair Analysis Today</p>
+            <a href="contact.html" class="btn btn-gold"
+                style="font-size: 1.2rem; padding: 1rem 3rem; margin-top:2rem;">Book Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size:1.8rem;">DECENT<span>AESTHETICS</span></a>
+                <p style="margin-top:1.5rem;">Premium Aesthetic & Hair Transplant Center offering world-class
+                    treatments.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="hair-transplant.html">Hair Transplant</a>
+                <a href="aesthetics.html">Aesthetics</a>
+                <a href="shop.html">Shop</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> City Center Opposite Boorjan Shoes Jalil Mall Qambar Swat
+                </p>
+                <p><i class="fa-solid fa-phone"></i> 03418442640 / 03489251136</p>
+                <p><i class="fa-solid fa-envelope"></i> info@decentaesthetics.com</p>
+                <p><i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address"
+                        style="padding:10px; width:70%; border:none; border-radius:4px 0 0 4px;">
+                    <button type="submit"
+                        style="padding:10px; background:var(--gold); color:white; border:none; border-radius:0 4px 4px 0; cursor:pointer;"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Decent Aesthetics Clinic. All Rights Reserved. Designed for premium experience.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923418442640" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        // FAQ Dropdown Animation
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('i');
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    // Close all others
+                    document.querySelectorAll('.faq-answer').forEach(ans => ans.style.maxHeight = null);
+                    document.querySelectorAll('.faq-question i').forEach(i => {
+                        i.classList.remove('fa-minus');
+                        i.classList.add('fa-plus');
+                    });
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

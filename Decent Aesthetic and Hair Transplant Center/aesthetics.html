@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Treatments | Decent Aesthetics Clinic</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 8rem 5% 4rem;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            color: var(--gold);
+            font-size: 3rem;
+        }
+
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            padding: 5rem 5%;
+        }
+
+        .treatment-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .t-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--grey-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .treatment-card:hover .t-icon {
+            background: var(--navy);
+            transform: rotateY(360deg);
+            color: var(--white);
+        }
+
+        .t-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .t-desc {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .t-benefits {
+            margin-bottom: 1.5rem;
+        }
+
+        .t-benefits li {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            display: flex;
+            gap: 10px;
+        }
+
+        .t-benefits li i {
+            color: var(--gold);
+            margin-top: 5px;
+        }
+
+        .t-recovery {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--gold);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar" class="scrolled">
+        <a href="index.html" class="logo" style="color:var(--navy);">DECENT<span>AESTHETICS</span></a>
+        <nav class="nav-links">
+            <a href="index.html" style="color:var(--navy);">Home</a>
+            <a href="hair-transplant.html" style="color:var(--navy);">Hair Transplant</a>
+            <a href="aesthetics.html" style="color:var(--gold);">Aesthetics</a>
+            <a href="shop.html" style="color:var(--navy);">Shop</a>
+            <a href="gallery.html" style="color:var(--navy);">Gallery</a>
+            <a href="blog.html" style="color:var(--navy);">Blog</a>
+            <a href="contact.html" style="color:var(--navy);">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn btn-outline" style="color:var(--navy); border-color:var(--navy);">Book
+            Consultation</a>
+    </header>
+
+    <div class="page-header">
+        <h1>Aesthetic Treatments</h1>
+        <p style="color:rgba(255,255,255,0.8); font-size:1.2rem; max-width:600px; margin:1rem auto;">Rejuvenate your
+            skin with our advanced, non-invasive procedures.</p>
+    </div>
+
+    <section class="treatments-grid">
+        <!-- Treatment 1 -->
+        <div class="treatment-card fade-in">
+            <div class="t-icon"><i class="fa-solid fa-droplet"></i></div>
+            <h3 class="t-title">Hydrafacial</h3>
+            <p class="t-desc">A medical-grade resurfacing treatment that clears out your pores and hydrates your skin.
+            </p>
+            <ul class="t-benefits">
+                <li><i class="fa-solid fa-check"></i> Deeply cleanses and exfoliates</li>
+                <li><i class="fa-solid fa-check"></i> Extracts impurities painlessly</li>
+                <li><i class="fa-solid fa-check"></i> Hydrates and nourishes</li>
+            </ul>
+            <div class="t-recovery"><i class="fa-solid fa-clock"></i> No Downtime</div>
+            <a href="contact.html" class="btn btn-gold" style="width:100%;">Book Now</a>
+        </div>
+
+        <!-- Treatment 2 -->
+        <div class="treatment-card fade-in" id="prp">
+            <div class="t-icon"><i class="fa-solid fa-flask"></i></div>
+            <h3 class="t-title">PRP Therapy</h3>
+            <p class="t-desc">Utilizes your own platelet-rich plasma to stimulate collagen production and hair growth.
+            </p>
+            <ul class="t-benefits">
+                <li><i class="fa-solid fa-check"></i> Accelerates healing</li>
+                <li><i class="fa-solid fa-check"></i> Reduces fine lines and wrinkles</li>
+                <li><i class="fa-solid fa-check"></i> Rejuvenates overall complexion</li>
+            </ul>
+            <div class="t-recovery"><i class="fa-solid fa-clock"></i> 1-2 Days</div>
+            <a href="contact.html" class="btn btn-gold" style="width:100%;">Book Now</a>
+        </div>
+
+        <!-- Treatment 3 -->
+        <div class="treatment-card fade-in">
+            <div class="t-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3 class="t-title">Chemical Peels</h3>
+            <p class="t-desc">Removes the top layers of skin to reveal smoother, glowing skin underneath.</p>
+            <ul class="t-benefits">
+                <li><i class="fa-solid fa-check"></i> Improves skin texture</li>
+                <li><i class="fa-solid fa-check"></i> Reduces hyperpigmentation</li>
+                <li><i class="fa-solid fa-check"></i> Minimizes acne scars</li>
+            </ul>
+            <div class="t-recovery"><i class="fa-solid fa-clock"></i> 3-7 Days</div>
+            <a href="contact.html" class="btn btn-gold" style="width:100%;">Book Now</a>
+        </div>
+
+        <!-- Treatment 4 -->
+        <div class="treatment-card fade-in">
+            <div class="t-icon"><i class="fa-solid fa-syringe"></i></div>
+            <h3 class="t-title">Microneedling</h3>
+            <p class="t-desc">Stimulates your skin's natural healing process to produce collagen and elastin.</p>
+            <ul class="t-benefits">
+                <li><i class="fa-solid fa-check"></i> Firms and thickens skin</li>
+                <li><i class="fa-solid fa-check"></i> Reduces pore size</li>
+                <li><i class="fa-solid fa-check"></i> Effective on stretch marks</li>
+            </ul>
+            <div class="t-recovery"><i class="fa-solid fa-clock"></i> 2-3 Days</div>
+            <a href="contact.html" class="btn btn-gold" style="width:100%;">Book Now</a>
+        </div>
+
+        <!-- Treatment 5 -->
+        <div class="treatment-card fade-in">
+            <div class="t-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <h3 class="t-title">Botox</h3>
+            <p class="t-desc">Relaxes facial muscles to smooth out dynamic wrinkles and prevent new ones.</p>
+            <ul class="t-benefits">
+                <li><i class="fa-solid fa-check"></i> Smooths forehead lines</li>
+                <li><i class="fa-solid fa-check"></i> Eliminates crow's feet</li>
+                <li><i class="fa-solid fa-check"></i> Quick, 15-minute procedure</li>
+            </ul>
+            <div class="t-recovery"><i class="fa-solid fa-clock"></i> No Downtime</div>
+            <a href="contact.html" class="btn btn-gold" style="width:100%;">Book Now</a>
+        </div>
+
+        <!-- Treatment 6 -->
+        <div class="treatment-card fade-in">
+            <div class="t-icon"><i class="fa-brands fa-pagelines"></i></div>
+            <h3 class="t-title">Dermal Fillers</h3>
+            <p class="t-desc">Restores lost volume, smooths lines, and enhances facial contours.</p>
+            <ul class="t-benefits">
+                <li><i class="fa-solid fa-check"></i> Plumps lips & cheeks</li>
+                <li><i class="fa-solid fa-check"></i> Softens marionette lines</li>
+                <li><i class="fa-solid fa-check"></i> Immediate visible results</li>
+            </ul>
+            <div class="t-recovery"><i class="fa-solid fa-clock"></i> 1-2 Days (Minor Swelling)</div>
+            <a href="contact.html" class="btn btn-gold" style="width:100%;">Book Now</a>
+        </div>
+
+        <!-- Treatment 7 -->
+        <div class="treatment-card fade-in">
+            <div class="t-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3 class="t-title">Laser Hair Removal</h3>
+            <p class="t-desc">Safe and permanent reduction of unwanted hair using advanced laser technology.</p>
+            <ul class="t-benefits">
+                <li><i class="fa-solid fa-check"></i> Long-lasting results</li>
+                <li><i class="fa-solid fa-check"></i> Painless cooling tech</li>
+                <li><i class="fa-solid fa-check"></i> Safe for all skin types</li>
+            </ul>
+            <div class="t-recovery"><i class="fa-solid fa-clock"></i> No Downtime</div>
+            <a href="contact.html" class="btn btn-gold" style="width:100%;">Book Now</a>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="padding-section bg-light text-center fade-in">
+        <h2 class="section-title">Not Sure Which Treatment is Right for You?</h2>
+        <p class="section-subtitle">Our experts will analyze your skin and formulate a personalized plan.</p>
+        <a href="contact.html" class="btn btn-gold">Book Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size:1.8rem;">DECENT<span>AESTHETICS</span></a>
+                <p style="margin-top:1.5rem;">Premium Aesthetic & Hair Transplant Center offering world-class
+                    treatments.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="hair-transplant.html">Hair Transplant</a>
+                <a href="aesthetics.html">Aesthetics</a>
+                <a href="shop.html">Shop</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> City Center Opposite Boorjan Shoes Jalil Mall Qambar Swat
+                </p>
+                <p><i class="fa-solid fa-phone"></i> 03418442640 / 03489251136</p>
+                <p><i class="fa-solid fa-envelope"></i> info@decentaesthetics.com</p>
+                <p><i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address"
+                        style="padding:10px; width:70%; border:none; border-radius:4px 0 0 4px;">
+                    <button type="submit"
+                        style="padding:10px; background:var(--gold); color:white; border:none; border-radius:0 4px 4px 0; cursor:pointer;"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Decent Aesthetics Clinic. All Rights Reserved. Designed for premium experience.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923418442640" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

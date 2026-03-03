@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Blog | Decent Aesthetics Clinic</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 8rem 5% 4rem;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .blog-container {
+            display: flex;
+            gap: 3rem;
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blog-main {
+            flex: 3;
+        }
+
+        .blog-sidebar {
+            flex: 1;
+        }
+
+        @media (max-width: 900px) {
+            .blog-container {
+                flex-direction: column;
+            }
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-img img {
+            transform: scale(1.1);
+        }
+
+        .blog-cat {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-date {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--gold);
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .read-more {
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more i {
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover .read-more {
+            color: var(--gold);
+        }
+
+        .blog-card:hover .read-more i {
+            transform: translateX(5px);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            border-bottom: 2px solid var(--grey-bg);
+            padding-bottom: 0.5rem;
+        }
+
+        .cat-list {
+            list-style: none;
+        }
+
+        .cat-list li {
+            margin-bottom: 1rem;
+        }
+
+        .cat-list a {
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .cat-list a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .cat-count {
+            background: var(--grey-bg);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar" class="scrolled">
+        <a href="index.html" class="logo" style="color:var(--navy);">DECENT<span>AESTHETICS</span></a>
+        <nav class="nav-links">
+            <a href="index.html" style="color:var(--navy);">Home</a>
+            <a href="hair-transplant.html" style="color:var(--navy);">Hair Transplant</a>
+            <a href="aesthetics.html" style="color:var(--navy);">Aesthetics</a>
+            <a href="shop.html" style="color:var(--navy);">Shop</a>
+            <a href="gallery.html" style="color:var(--navy);">Gallery</a>
+            <a href="blog.html" style="color:var(--gold);">Blog</a>
+            <a href="contact.html" style="color:var(--navy);">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn btn-outline" style="color:var(--navy); border-color:var(--navy);">Book
+            Consultation</a>
+    </header>
+
+    <div class="page-header fade-in">
+        <h1 style="color:var(--gold);">The LuxeClinic Journal</h1>
+        <p style="color:rgba(255,255,255,0.8); font-size:1.2rem; max-width:600px; margin:1rem auto;">Expert insights,
+            tips, and news on hair and skin care.</p>
+    </div>
+
+    <div class="blog-container">
+        <div class="blog-main">
+            <div class="blog-grid">
+                <!-- Post 1 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-img">
+                        <div class="blog-cat">Hair Care</div>
+                        <img src="https://images.unsplash.com/photo-1616801968598-c1f0eb2384a5?w=600" alt="Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="fa-regular fa-calendar"></i> October 12, 2026</div>
+                        <h3 class="blog-title">5 Essential Tips for Post-Transplant Care</h3>
+                        <p class="blog-excerpt">Ensure maximum graft survival and rapid healing by following these
+                            critical first-month care principles.</p>
+                        <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Post 2 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-img">
+                        <div class="blog-cat">Skin Care</div>
+                        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600" alt="Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="fa-regular fa-calendar"></i> September 28, 2026</div>
+                        <h3 class="blog-title">Why Hydrafacial is the Ultimate Glow Treatment</h3>
+                        <p class="blog-excerpt">Discover why celebrities and dermatologists swear by this 3-step deep
+                            cleansing and hydrating facial.</p>
+                        <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Post 3 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-img">
+                        <div class="blog-cat">Anti Aging</div>
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600" alt="Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="fa-regular fa-calendar"></i> August 15, 2026</div>
+                        <h3 class="blog-title">Botox vs. Fillers: What You Need to Know</h3>
+                        <p class="blog-excerpt">Understanding the differences, benefits, and which treatment is best
+                            suited for your specific anti-aging goals.</p>
+                        <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <!-- Post 4 -->
+                <article class="blog-card fade-in">
+                    <div class="blog-img">
+                        <div class="blog-cat">Post Treatment Care</div>
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600" alt="Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="fa-regular fa-calendar"></i> July 05, 2026</div>
+                        <h3 class="blog-title">The Importance of SPF After Chemical Peels</h3>
+                        <p class="blog-excerpt">Protecting your freshly revealed skin is crucial. Learn about the best
+                            sunscreens and why they matter.</p>
+                        <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar fade-in">
+            <div class="sidebar-widget">
+                <h4 class="sidebar-title">Categories</h4>
+                <ul class="cat-list">
+                    <li><a href="#">Hair Care <span class="cat-count">12</span></a></li>
+                    <li><a href="#">Skin Care <span class="cat-count">18</span></a></li>
+                    <li><a href="#">Anti Aging <span class="cat-count">7</span></a></li>
+                    <li><a href="#">Post Treatment Care <span class="cat-count">9</span></a></li>
+                </ul>
+            </div>
+            <div class="sidebar-widget">
+                <h4 class="sidebar-title">Newsletter Subscribe</h4>
+                <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:1rem;">Get the latest insights
+                    delivered weekly.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn btn-gold" style="width:100%; border-radius:5px;">Subscribe <i
+                            class="fa-solid fa-envelope"></i></button>
+                </form>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size:1.8rem;">DECENT<span>AESTHETICS</span></a>
+                <p style="margin-top:1.5rem;">Premium Aesthetic & Hair Transplant Center offering world-class
+                    treatments.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="hair-transplant.html">Hair Transplant</a>
+                <a href="aesthetics.html">Aesthetics</a>
+                <a href="shop.html">Shop</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> City Center Opposite Boorjan Shoes Jalil Mall Qambar Swat
+                </p>
+                <p><i class="fa-solid fa-phone"></i> 03418442640 / 03489251136</p>
+                <p><i class="fa-solid fa-envelope"></i> info@decentaesthetics.com</p>
+                <p><i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address"
+                        style="padding:10px; width:70%; border:none; border-radius:4px 0 0 4px;">
+                    <button type="submit"
+                        style="padding:10px; background:var(--gold); color:white; border:none; border-radius:0 4px 4px 0; cursor:pointer;"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Decent Aesthetics Clinic. All Rights Reserved. Designed for premium experience.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923418442640" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

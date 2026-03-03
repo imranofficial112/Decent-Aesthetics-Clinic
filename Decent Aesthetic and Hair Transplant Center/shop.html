@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Shop | Decent Aesthetics Clinic</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header id="navbar" class="scrolled">
+        <a href="index.html" class="logo" style="color:var(--navy);">DECENT<span>AESTHETICS</span></a>
+        <nav class="nav-links">
+            <a href="index.html" style="color:var(--navy);">Home</a>
+            <a href="hair-transplant.html" style="color:var(--navy);">Hair Transplant</a>
+            <a href="aesthetics.html" style="color:var(--navy);">Aesthetics</a>
+            <a href="shop.html" style="color:var(--gold);">Shop</a>
+            <a href="gallery.html" style="color:var(--navy);">Gallery</a>
+            <a href="blog.html" style="color:var(--navy);">Blog</a>
+            <a href="contact.html" style="color:var(--navy);">Contact</a>
+        </nav>
+        <div style="display:flex; gap:20px; align-items:center;">
+            <div class="cart-icon" id="cartIcon" style="position:relative; right:0; top:0; transform:none;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <a href="contact.html" class="btn btn-outline" style="color:var(--navy); border-color:var(--navy);">Book
+                Consultation</a>
+        </div>
+    </header>
+
+    <div class="shop-header fade-in">
+        <h1 style="color:var(--gold); font-size:3rem;">Clinic-Grade Essentials</h1>
+        <p style="color:rgba(255,255,255,0.8); font-size:1.2rem; max-width:600px; margin:1rem auto;">Elevate your daily
+            routine with our dermatologist-approved hair and skin care collection.</p>
+    </div>
+
+    <section class="products-grid container" id="productList">
+        <!-- Products will be injected via JS -->
+    </section>
+
+    <!-- Order Tracking Section -->
+    <section class="order-tracking fade-in">
+        <div class="container">
+            <h2 class="section-title">Track Your Order</h2>
+            <p class="section-subtitle">Enter your tracking number below to see your package's status.</p>
+            <div class="tracking-form">
+                <input type="text" class="tracking-input" placeholder="e.g. LX-12345678" id="trackId">
+                <button class="btn btn-gold" onclick="trackOrder()" style="border-radius: 30px;">Track</button>
+            </div>
+            <div id="trackResult"
+                style="color:var(--navy); font-weight:500; font-size:1.1rem; margin-top:1rem; min-height:30px;"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size:1.8rem;">DECENT<span>AESTHETICS</span></a>
+                <p style="margin-top:1.5rem;">Premium Aesthetic & Hair Transplant Center offering world-class
+                    treatments.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="hair-transplant.html">Hair Transplant</a>
+                <a href="aesthetics.html">Aesthetics</a>
+                <a href="shop.html">Shop</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> City Center Opposite Boorjan Shoes Jalil Mall Qambar Swat
+                </p>
+                <p><i class="fa-solid fa-phone"></i> 03418442640 / 03489251136</p>
+                <p><i class="fa-solid fa-envelope"></i> info@decentaesthetics.com</p>
+                <p><i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address"
+                        style="padding:10px; width:70%; border:none; border-radius:4px 0 0 4px;">
+                    <button type="submit"
+                        style="padding:10px; background:var(--gold); color:white; border:none; border-radius:0 4px 4px 0; cursor:pointer;"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Decent Aesthetics Clinic. All Rights Reserved. Designed for premium experience.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h3>Your Premium Cart</h3>
+            <i class="fa-solid fa-times close-cart" id="closeCart"></i>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <!-- Cart items injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total Premium</span>
+                <span id="cartTotalText">$0.00</span>
+            </div>
+            <button class="btn btn-gold" style="width:100%; display:block; padding:1rem; font-size:1.1rem;"
+                onclick="openPayment()">Proceed to Secure Checkout <i class="fa-solid fa-lock"></i></button>
+        </div>
+    </div>
+
+    <!-- Fake Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="payment-content fade-in">
+            <h2 style="color:var(--navy); font-size:1.8rem; margin-bottom:1rem;">Secure Payment</h2>
+            <p style="color:var(--text-light); margin-bottom:1rem;">Total amount: <strong id="modalTotal"
+                    style="color:var(--gold);">$0.00</strong></p>
+            <div class="payment-icons">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-amex"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+            </div>
+            <form onsubmit="processPayment(event)"
+                style="display:flex; flex-direction:column; gap:15px; margin-top:2rem; text-align:left;">
+                <input type="text" placeholder="Cardholder Name" required
+                    style="padding:10px; border:1px solid #ddd; border-radius:5px;">
+                <input type="text" placeholder="Card Number" required
+                    style="padding:10px; border:1px solid #ddd; border-radius:5px;">
+                <div style="display:flex; gap:10px;">
+                    <input type="text" placeholder="MM/YY" required
+                        style="padding:10px; border:1px solid #ddd; border-radius:5px; flex:1;">
+                    <input type="text" placeholder="CVC" required
+                        style="padding:10px; border:1px solid #ddd; border-radius:5px; flex:1;">
+                </div>
+                <button type="submit" class="btn btn-gold"
+                    style="width:100%; margin-top:1rem; font-size:1.1rem; padding:12px;">Pay Securely Now</button>
+                <button type="button" class="btn btn-outline" style="color:var(--navy); border-color:#ddd;"
+                    onclick="closePayment()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923418442640" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script src="shop.js"></script>
+</body>
+
+</html>

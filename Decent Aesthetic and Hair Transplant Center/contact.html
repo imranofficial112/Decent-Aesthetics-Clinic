@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Decent Aesthetics Clinic</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 8rem 5% 4rem;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Contact Info Side */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--gold);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateX(10px);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .info-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Contact Form Side */
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            font-family: inherit;
+            background: var(--grey-bg);
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            background: var(--white);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            top: 0;
+            left: -100%;
+            transform: skewX(-20deg);
+            transition: left 0.5s ease;
+        }
+
+        .btn-submit:hover::after {
+            left: 100%;
+        }
+
+        .btn-submit i {
+            transition: transform 0.3s;
+        }
+
+        .btn-submit:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Map Section */
+        .map-section {
+            width: 100%;
+            height: 400px;
+            background: #ddd;
+            position: relative;
+        }
+
+        .map-iframe,
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--navy);
+            background-image: repeating-linear-gradient(45deg, rgba(255, 193, 7, 0.05) 0px, rgba(255, 193, 7, 0.05) 1px, transparent 1px, transparent 30px),
+                repeating-linear-gradient(-45deg, rgba(255, 193, 7, 0.05) 0px, rgba(255, 193, 7, 0.05) 1px, transparent 1px, transparent 30px);
+            position: relative;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 60, 93, 0.7);
+        }
+
+        .map-text {
+            position: relative;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar" class="scrolled">
+        <a href="index.html" class="logo" style="color:var(--navy);">DECENT<span>AESTHETICS</span></a>
+        <nav class="nav-links">
+            <a href="index.html" style="color:var(--navy);">Home</a>
+            <a href="hair-transplant.html" style="color:var(--navy);">Hair Transplant</a>
+            <a href="aesthetics.html" style="color:var(--navy);">Aesthetics</a>
+            <a href="shop.html" style="color:var(--navy);">Shop</a>
+            <a href="gallery.html" style="color:var(--navy);">Gallery</a>
+            <a href="blog.html" style="color:var(--navy);">Blog</a>
+            <a href="contact.html" style="color:var(--gold);">Contact</a>
+        </nav>
+    </header>
+
+    <div class="page-header fade-in">
+        <h1 style="color:var(--gold);">Reach Out to Us</h1>
+        <p style="color:rgba(255,255,255,0.8); font-size:1.2rem; max-width:600px; margin:1rem auto;">We are here to
+            answer any questions and guide you on your journey to confidence.</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info-grid fade-in">
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-content">
+                    <h3>Clinic Location</h3>
+                    <p>City Center Opposite Boorjan Shoes<br>Jalil Mall Qambar Swat</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-content">
+                    <h3>Call Us Directly</h3>
+                    <p>03418442640<br>03489251136</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="info-content">
+                    <h3>Email Us</h3>
+                    <p>info@decentaesthetics.com<br>support@decentaesthetics.com</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+                <div class="info-content">
+                    <h3>Working Hours</h3>
+                    <p>Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: Closed (Emergencies only)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form fade-in">
+            <h2>Book Your Free Consultation</h2>
+            <p style="color:var(--text-light); margin-bottom:2rem;">Fill out the form below and our medical team will
+                get back to you within 24 hours.</p>
+            <form onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="service">Interested Service</label>
+                    <select id="service" class="form-control">
+                        <option>Hair Transplant</option>
+                        <option>Aesthetic Treatment</option>
+                        <option>General Consultation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control"
+                        placeholder="Describe your concerns or goals..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold btn-submit">Send Message <i
+                        class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="map-section fade-in">
+        <div class="map-placeholder">
+            <div class="map-overlay"></div>
+            <div class="map-text">
+                <i class="fa-solid fa-map-location-dot"
+                    style="font-size:3rem; margin-bottom:1rem; color:var(--gold);"></i>
+                <h3>Interactive Map Loading...</h3>
+                <p>City Center, Jalil Mall Qambar Swat</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size:1.8rem;">DECENT<span>AESTHETICS</span></a>
+                <p style="margin-top:1.5rem;">Premium Aesthetic & Hair Transplant Center offering world-class
+                    treatments.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="hair-transplant.html">Hair Transplant</a>
+                <a href="aesthetics.html">Aesthetics</a>
+                <a href="shop.html">Shop</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> City Center Opposite Boorjan Shoes Jalil Mall Qambar Swat
+                </p>
+                <p><i class="fa-solid fa-phone"></i> 03418442640 / 03489251136</p>
+                <p><i class="fa-solid fa-envelope"></i> info@decentaesthetics.com</p>
+                <p><i class="fa-solid fa-clock"></i> Mon - Sat: 9:00 AM - 8:00 PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for updates and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address"
+                        style="padding:10px; width:70%; border:none; border-radius:4px 0 0 4px;">
+                    <button type="submit"
+                        style="padding:10px; background:var(--gold); color:white; border:none; border-radius:0 4px 4px 0; cursor:pointer;"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Decent Aesthetics Clinic. All Rights Reserved. Designed for premium experience.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923418442640" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const btn = document.querySelector('.btn-submit');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+
+            setTimeout(() => {
+                btn.innerHTML = 'Message Sent! <i class="fa-solid fa-check"></i>';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    event.target.reset();
+                }, 3000);
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
